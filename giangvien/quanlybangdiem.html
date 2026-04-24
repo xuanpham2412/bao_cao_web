@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quản Lý Bảng Điểm</title>
+    <link rel="stylesheet" href="giangvien.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h2>Hệ thống Quản lý Đại học</h2>
+      <div>
+        <span
+          id="welcomeName"
+          style="font-weight: bold; margin-right: 15px"
+        ></span>
+        <button class="btn-danger" onclick="dangXuat()">Đăng Xuất</button>
+      </div>
+    </div>
+
+    <div class="container-layout">
+      <div class="sidebar">
+        <a href="thongtin.html" class="menu-item"> Thông Tin Cá Nhân</a>
+        <a href="quanlybangdiem.html" class="menu-item active"
+          >Quản Lý Bảng Điểm</a
+        >
+      </div>
+
+      <div class="main-content">
+        <div class="card" style="padding: 20px">
+          <div class="filter-section">
+            <div class="form-group">
+              <label>Mã Lớp Học</label>
+              <input
+                type="text"
+                id="inputMaLop"
+                placeholder="Ví dụ: CNTT1"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Mã Môn Học</label>
+              <input
+                type="text"
+                id="inputMaMH"
+                placeholder="Ví dụ: MH001"
+                required
+              />
+            </div>
+            <button class="btn-search" onclick="layDanhSachLop()">
+              Lấy Danh Sách
+            </button>
+          </div>
+
+          <h3 id="tableTitle" style="border: none; padding-bottom: 0">
+            Vui lòng nhập Mã Lớp và Mã Môn Học
+          </h3>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mã SV</th>
+                  <th>Họ và Tên Sinh Viên</th>
+                  <th>Mã Môn</th>
+                  <th>Tên Môn</th>
+                  <th style="width: 100px">Điểm (Hệ 10)</th>
+                  <th style="width: 150px">Hành động</th>
+                </tr>
+              </thead>
+              <tbody id="bangDiemBody">
+                <tr>
+                  <td colspan="6" class="empty-message">
+                    Chưa có dữ liệu. Hãy bấm "Lấy Danh Sách".
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="quanlybangdiem.js"></script>
+  </body>
+</html>

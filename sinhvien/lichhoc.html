@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lịch Học</title>
+    <link rel="stylesheet" href="trangchu.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h2>Hệ thống Quản lý Đại học</h2>
+      <div>
+        <span
+          id="welcomeName"
+          style="font-weight: bold; margin-right: 15px"
+        ></span>
+        <button class="btn-danger" onclick="dangXuat()">Đăng Xuất</button>
+      </div>
+    </div>
+
+    <div class="container-layout">
+      <div class="sidebar">
+        <a href="trangchu.html" class="menu-item">Thông Tin Cá Nhân</a>
+        <a href="lichhoc.html" class="menu-item active">Lịch Học</a>
+        <a href="ketquahoctap.html" class="menu-item">Kết Quả Học Tập</a>
+      </div>
+
+      <div class="main-content">
+        <div class="card">
+          <h3>Thời Khóa Biểu Lớp <span id="tenLop">...</span></h3>
+          <div class="table-container">
+            <table class="timetable">
+              <thead>
+                <tr>
+                  <th style="width: 100px">Ca Học</th>
+                  <th>Thứ 2</th>
+                  <th>Thứ 3</th>
+                  <th>Thứ 4</th>
+                  <th>Thứ 5</th>
+                  <th>Thứ 6</th>
+                  <th>Thứ 7</th>
+                </tr>
+              </thead>
+              <tbody id="bangLichHoc">
+                <tr>
+                  <td colspan="7" class="text-center">Đang tải dữ liệu...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="lichhoc.js"></script>
+  </body>
+</html>

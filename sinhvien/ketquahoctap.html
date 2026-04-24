@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kết Quả Học Tập</title>
+    <link rel="stylesheet" href="trangchu.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h2>Hệ thống Quản lý Đại học</h2>
+      <div>
+        <span
+          id="welcomeName"
+          style="font-weight: bold; margin-right: 15px"
+        ></span>
+        <button class="btn-danger" onclick="dangXuat()">Đăng Xuất</button>
+      </div>
+    </div>
+
+    <div class="container-layout">
+      <div class="sidebar">
+        <a href="trangchu.html" class="menu-item">Thông Tin Cá Nhân</a>
+        <a href="lichhoc.html" class="menu-item">Lịch Học</a>
+        <a href="ketquahoctap.html" class="menu-item active">Kết Quả Học Tập</a>
+      </div>
+
+      <div class="main-content">
+        <div
+          class="card"
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e8f0fe;
+            border-left: 4px solid #1a73e8;
+            margin-bottom: 20px;
+          "
+        >
+          <span style="font-size: 18px; color: #1a73e8; font-weight: bold"
+            >Tổng số tín chỉ: <b id="tongTinChi" style="color: #333">0</b></span
+          >
+          <span style="font-size: 18px; color: #1a73e8; font-weight: bold"
+            >Điểm Trung Bình:
+            <b id="diemTrungBinh" style="color: #dc3545; font-size: 22px"
+              >0.00</b
+            ></span
+          >
+        </div>
+
+        <div class="card">
+          <h3>Chi Tiết Điểm Từng Môn</h3>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mã Môn</th>
+                  <th>Tên Môn Học</th>
+                  <th class="text-center">Số Tín Chỉ</th>
+                  <th class="text-center">Điểm (Hệ 10)</th>
+                  <th class="text-center">Trạng Thái</th>
+                </tr>
+              </thead>
+              <tbody id="bangDiem">
+                <tr>
+                  <td colspan="5" class="text-center">Đang tải dữ liệu...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="ketquahoctap.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trang Chủ Sinh Viên</title>
+    <link rel="stylesheet" href="trangchu.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h2>Hệ thống Quản lý Đại học</h2>
+      <div>
+        <span
+          id="welcomeName"
+          style="font-weight: bold; margin-right: 15px"
+        ></span>
+        <button class="btn-danger" onclick="dangXuat()">Đăng Xuất</button>
+      </div>
+    </div>
+
+    <div class="container-layout">
+      <div class="sidebar">
+        <a href="trangchu.html" class="menu-item active">Thông Tin Cá Nhân</a>
+        <a href="lichhoc.html" class="menu-item">Lịch Học</a>
+        <a href="ketquahoctap.html" class="menu-item">Kết Quả Học Tập</a>
+      </div>
+
+      <div class="main-content">
+        <div class="card">
+          <h3>Thông Tin Cơ Bản</h3>
+          <div class="info-grid">
+            <div class="info-item">
+              <label>Mã Sinh Viên</label><span id="txtMaSV">...</span>
+            </div>
+            <div class="info-item">
+              <label>Họ và Tên</label><span id="txtTenSV">...</span>
+            </div>
+            <div class="info-item">
+              <label>Ngày Sinh</label><span id="txtNgaySinh">...</span>
+            </div>
+            <div class="info-item">
+              <label>Giới Tính</label><span id="txtGioiTinh">...</span>
+            </div>
+            <div class="info-item">
+              <label>Lớp Hiện Tại</label><span id="txtMaLop">...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="trangchu.js"></script>
+  </body>
+</html>

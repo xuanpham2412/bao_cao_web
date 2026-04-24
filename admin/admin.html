@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trang Chủ - Quản Trị Hệ Thống</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h2>Hệ thống Quản lý Đại học</h2>
+      <div>
+        <span
+          id="userInfo"
+          style="font-weight: bold; margin-right: 15px"
+        ></span>
+        <button class="btn-danger" id="btnLogout">Đăng Xuất</button>
+      </div>
+    </div>
+
+    <div id="adminContainer" class="admin-container">
+      <div class="sidebar">
+        <button class="tab-btn active" data-target="tabKhoa">
+          Quản lý Khoa
+        </button>
+        <button class="tab-btn" data-target="tabLop">Quản lý Lớp</button>
+        <button class="tab-btn" data-target="tabGiangVien">
+          Quản lý Giảng Viên
+        </button>
+        <button class="tab-btn" data-target="tabSinhVien">
+          Quản lý Sinh Viên
+        </button>
+        <button class="tab-btn" data-target="tabMonHoc">Quản lý Môn Học</button>
+        <button class="tab-btn" data-target="tabLichHoc">
+          Quản lý Lịch Học
+        </button>
+      </div>
+
+      <div class="content">
+        <div id="tabKhoa" class="tab-content active">
+          <h3 id="title_khoa">Thêm Khoa Mới</h3>
+          <form id="formKhoa" data-type="khoa">
+            <div class="form-group">
+              <label>Mã Khoa</label><input type="text" id="khoa_ma" required />
+            </div>
+            <div class="form-group">
+              <label>Tên Khoa</label
+              ><input type="text" id="khoa_ten" required />
+            </div>
+            <button type="submit" class="btn-primary" id="btn_submit_khoa">
+              Lưu Khoa
+            </button>
+            <button
+              type="button"
+              class="btn-danger"
+              style="display: none; width: 100%; margin-top: 5px"
+              id="btn_cancel_khoa"
+              onclick="cancelEdit('khoa')"
+            >
+              Hủy Cập Nhật
+            </button>
+          </form>
+          <div class="table-container">
+            <table id="table_khoa">
+              <thead>
+                <tr>
+                  <th>Mã Khoa</th>
+                  <th>Tên Khoa</th>
+                  <th class="action-col">Hành động</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="tabLop" class="tab-content">
+          <h3 id="title_lop">Thêm Lớp Mới</h3>
+          <form id="formLop" data-type="lop">
+            <div class="form-group">
+              <label>Mã Lớp</label><input type="text" id="lop_ma" required />
+            </div>
+            <div class="form-group">
+              <label>Tên Lớp</label><input type="text" id="lop_ten" required />
+            </div>
+            <div class="form-group">
+              <label>Thuộc Mã Khoa</label
+              ><input type="text" id="lop_makhoa" required />
+            </div>
+            <button type="submit" class="btn-primary" id="btn_submit_lop">
+              Lưu Lớp
+            </button>
+            <button
+              type="button"
+              class="btn-danger"
+              style="display: none; width: 100%; margin-top: 5px"
+              id="btn_cancel_lop"
+              onclick="cancelEdit('lop')"
+            >
+              Hủy Cập Nhật
+            </button>
+          </form>
+          <div class="table-container">
+            <table id="table_lop">
+              <thead>
+                <tr>
+                  <th>Mã Lớp</th>
+                  <th>Tên Lớp</th>
+                  <th>Mã Khoa</th>
+                  <th class="action-col">Hành động</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="tabGiangVien" class="tab-content">
+          <h3 id="title_giangvien">Thêm Giảng Viên Mới</h3>
+          <form id="formGiangVien" data-type="giangvien">
+            <div class="form-group">
+              <label>Mã Giảng Viên</label
+              ><input type="text" id="gv_ma" required />
+            </div>
+            <div class="form-group">
+              <label>Tên Giảng Viên</label
+              ><input type="text" id="gv_ten" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label><input type="email" id="gv_email" />
+            </div>
+            <div class="form-group">
+              <label>Thuộc Mã Khoa</label
+              ><input type="text" id="gv_makhoa" required />
+            </div>
+            <button type="submit" class="btn-primary" id="btn_submit_giangvien">
+              Lưu Giảng Viên
+            </button>
+            <button
+              type="button"
+              class="btn-danger"
+              style="display: none; width: 100%; margin-top: 5px"
+              id="btn_cancel_giangvien"
+              onclick="cancelEdit('giangvien')"
+            >
+              Hủy Cập Nhật
+            </button>
+          </form>
+          <div class="table-container">
+            <table id="table_giangvien">
+              <thead>
+                <tr>
+                  <th>Mã GV</th>
+                  <th>Tên GV</th>
+                  <th>Email</th>
+                  <th>Mã Khoa</th>
+                  <th class="action-col">Hành động</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="tabSinhVien" class="tab-content">
+          <h3 id="title_sinhvien">Thêm Sinh Viên Mới</h3>
+          <form id="formSinhVien" data-type="sinhvien">
+            <div class="form-group">
+              <label>Mã Sinh Viên</label
+              ><input type="text" id="sv_ma" required />
+            </div>
+            <div class="form-group">
+              <label>Tên Sinh Viên</label
+              ><input type="text" id="sv_ten" required />
+            </div>
+            <div class="form-group">
+              <label>Ngày Sinh</label
+              ><input type="date" id="sv_ngay" required />
+            </div>
+            <div class="form-group">
+              <label>Giới Tính</label
+              ><select id="sv_gioitinh">
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Mã Lớp</label><input type="text" id="sv_malop" required />
+            </div>
+            <button type="submit" class="btn-primary" id="btn_submit_sinhvien">
+              Lưu Sinh Viên
+            </button>
+            <button
+              type="button"
+              class="btn-danger"
+              style="display: none; width: 100%; margin-top: 5px"
+              id="btn_cancel_sinhvien"
+              onclick="cancelEdit('sinhvien')"
+            >
+              Hủy Cập Nhật
+            </button>
+          </form>
+          <div class="table-container">
+            <table id="table_sinhvien">
+              <thead>
+                <tr>
+                  <th>Mã SV</th>
+                  <th>Tên SV</th>
+                  <th>Ngày Sinh</th>
+                  <th>Giới Tính</th>
+                  <th>Mã Lớp</th>
+                  <th class="action-col">Hành động</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="tabMonHoc" class="tab-content">
+          <h3 id="title_monhoc">Thêm Môn Học Mới</h3>
+          <form id="formMonHoc" data-type="monhoc">
+            <div class="form-group">
+              <label>Mã Môn Học</label><input type="text" id="mh_ma" required />
+            </div>
+            <div class="form-group">
+              <label>Tên Môn Học</label
+              ><input type="text" id="mh_ten" required />
+            </div>
+            <div class="form-group">
+              <label>Số Tín Chỉ</label
+              ><input type="number" id="mh_tinchi" min="1" required />
+            </div>
+            <button type="submit" class="btn-primary" id="btn_submit_monhoc">
+              Lưu Môn Học
+            </button>
+            <button
+              type="button"
+              class="btn-danger"
+              style="display: none; width: 100%; margin-top: 5px"
+              id="btn_cancel_monhoc"
+              onclick="cancelEdit('monhoc')"
+            >
+              Hủy Cập Nhật
+            </button>
+          </form>
+          <div class="table-container">
+            <table id="table_monhoc">
+              <thead>
+                <tr>
+                  <th>Mã MH</th>
+                  <th>Tên MH</th>
+                  <th>Số Tín Chỉ</th>
+                  <th class="action-col">Hành động</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="tabLichHoc" class="tab-content">
+          <h3 id="title_lichhoc">Thêm Lịch Học Mới</h3>
+          <form id="formLichHoc" data-type="lichhoc">
+            <div class="form-group">
+              <label>Mã Lớp</label><input type="text" id="lh_malop" required />
+            </div>
+            <div class="form-group">
+              <label>Mã Môn Học</label
+              ><input type="text" id="lh_mamh" required />
+            </div>
+            <div class="form-group">
+              <label>Mã Giảng Viên</label
+              ><input type="text" id="lh_magv" required />
+            </div>
+            <div class="form-group">
+              <label>Phòng Học</label
+              ><input type="text" id="lh_phong" required />
+            </div>
+
+            <div style="display: flex; gap: 15px">
+              <div class="form-group" style="flex: 1">
+                <label>Thứ</label>
+                <select id="lh_thu">
+                  <option value="Thứ 2">Thứ 2</option>
+                  <option value="Thứ 3">Thứ 3</option>
+                  <option value="Thứ 4">Thứ 4</option>
+                  <option value="Thứ 5">Thứ 5</option>
+                  <option value="Thứ 6">Thứ 6</option>
+                  <option value="Thứ 7">Thứ 7</option>
+                </select>
+              </div>
+              <div class="form-group" style="flex: 1">
+                <label>Ca Học</label>
+                <select id="lh_cahoc">
+                  <option value="Sáng">Sáng</option>
+                  <option value="Chiều">Chiều</option>
+                  <option value="Tối">Tối</option>
+                </select>
+              </div>
+            </div>
+
+            <input type="hidden" id="lh_malich_hidden" />
+            <button type="submit" class="btn-primary" id="btn_submit_lichhoc">
+              Lưu Lịch Học
+            </button>
+            <button
+              type="button"
+              class="btn-danger"
+              style="display: none; width: 100%; margin-top: 5px"
+              id="btn_cancel_lichhoc"
+              onclick="cancelEdit('lichhoc')"
+            >
+              Hủy Cập Nhật
+            </button>
+          </form>
+          <div class="table-container">
+            <table id="table_lichhoc">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Mã Lớp</th>
+                  <th>Mã MH</th>
+                  <th>Mã GV</th>
+                  <th>Phòng Học</th>
+                  <th>Thứ</th>
+                  <th>Ca Học</th>
+                  <th class="action-col">Hành động</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="admin.js"></script>
+  </body>
+</html>
