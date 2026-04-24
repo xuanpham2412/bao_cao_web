@@ -1,6 +1,12 @@
 # Hệ Thống Quản Lý Sinh Viên & Giảng Viên
 
-**Sinh Vien:** Pham Van Xuan, MSV: 23810310450
+**Sinh Vien:**
+
+1. Phạm Văn Xuân, MSV: 23810310450
+   2.VŨ THANH TÙNG MSV: 23810310114
+   3.NGUYỄN ĐỨC ANH MSV: 23810310393
+
+---
 
 Dự án là một hệ thống quản lý giáo dục toàn diện, cho phép Admin quản lý nhân sự, Giảng viên quản lý điểm số và Sinh viên theo dõi lộ trình học tập.
 
