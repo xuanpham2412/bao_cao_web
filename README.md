@@ -23,7 +23,7 @@ Dự án là một hệ thống quản lý giáo dục toàn diện, cho phép A
 
 ---
 
-## 🚀 Hướng dẫn cài đặt và khởi chạy
+##  Hướng dẫn cài đặt và khởi chạy
 
 ### Bước 1: Thiết lập Cơ sở dữ liệu (MySQL)
 
@@ -51,32 +51,6 @@ Dự án là một hệ thống quản lý giáo dục toàn diện, cho phép A
 Hệ thống sử dụng cơ chế tự động cấp tài khoản cho Sinh viên và Giảng viên ở lần đầu đăng nhập.
 ![Tài khoản đăng nhập mặc định](./img/z.png)
 
-### Cấu trúc thư mục
-
-project-root/
-│
-├── admin/ # Chức năng Quản trị viên
-│ ├── admin.html # Giao diện quản lý Khoa, Lớp, SV, GV, Môn học, Lịch học
-│ ├── admin.js # Xử lý API Thêm/Sửa/Xóa
-│ └── admin.css # Giao diện màu Xanh dương chủ đạo
-│
-├── giangvien/ # Chức năng cho Giảng viên
-│ ├── thongtin.html # Xem hồ sơ giảng viên
-│ ├── quanlybangdiem.html # Nhập điểm theo lớp và môn học
-│ └── giangvien.css # Giao diện đồng bộ màu Xanh dương
-│
-├── sinhvien/ # Chức năng cho Sinh viên
-│ ├── trangchu.html # Xem hồ sơ cá nhân
-│ ├── lichhoc.html # Xem thời khóa biểu dạng lưới (Thứ 2 - Thứ 7)
-│ ├── ketquahoctap.html # Xem bảng điểm và tính GPA tự động
-│ └── trangchu.css # CSS dùng chung cho phân hệ SV
-│
-├── dangnhap/ # Phân hệ đăng nhập
-│ ├── login.html
-│ ├── login.js # Xử lý điều hướng theo Quyền (Role)
-│ └── style.css
-│
-└── server.js # Node.js API Server (Kết nối MySQL)
 
 ### 2. Tệp Cơ sở dữ liệu tổng hợp (database.sql)
 
